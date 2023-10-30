@@ -3,23 +3,23 @@
 namespace App\Repository;
 
 use App\Entity\Location;
-use App\Entity\Measurment;
+use App\Entity\Measurement;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Measurment>
+ * @extends ServiceEntityRepository<Measurement>
  *
- * @method Measurment|null find($id, $lockMode = null, $lockVersion = null)
- * @method Measurment|null findOneBy(array $criteria, array $orderBy = null)
- * @method Measurment[]    findAll()
- * @method Measurment[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Measurement|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Measurement|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Measurement[]    findAll()
+ * @method Measurement[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class MeasurmentRepository extends ServiceEntityRepository
+class MeasurementRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Measurment::class);
+        parent::__construct($registry, Measurement::class);
     }
 
     public function findByLocation(Location $location)
@@ -36,7 +36,7 @@ class MeasurmentRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Measurment[] Returns an array of Measurment objects
+//     * @return Measurement[] Returns an array of Measurement objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -50,7 +50,7 @@ class MeasurmentRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Measurment
+//    public function findOneBySomeField($value): ?Measurement
 //    {
 //        return $this->createQueryBuilder('m')
 //            ->andWhere('m.exampleField = :val')

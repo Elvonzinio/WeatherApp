@@ -2,19 +2,19 @@
 
 namespace App\Entity;
 
-use App\Repository\MeasurmentRepository;
+use App\Repository\MeasurementRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: MeasurmentRepository::class)]
-class Measurment
+#[ORM\Entity(repositoryClass: MeasurementRepository::class)]
+class Measurement
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\ManyToOne(inversedBy: 'measurments')]
+    #[ORM\ManyToOne(inversedBy: 'Measurements')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Location $location = null;
 

@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Location;
-use App\Repository\MeasurmentRepository;
+use App\Repository\MeasurementRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,7 +15,7 @@ class WeatherController extends AbstractController
     public function city(
         #[MapEntity(mapping: ['country' => 'country', 'city' => 'city'])]
         Location $location,
-        MeasurmentRepository $repository,
+        MeasurementRepository $repository,
     ): Response
     {
         $measurements = $repository->findByLocation($location);
